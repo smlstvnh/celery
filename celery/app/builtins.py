@@ -198,6 +198,7 @@ def add_group_task(app):
 
             try:
                 tasks, results = zip(*[prepare_member(task) for task in tasks])
+                results = list(results)
             except ValueError:  # tasks empty
                 tasks, results = [], []
             return (tasks, self.app.GroupResult(group_id, results),
